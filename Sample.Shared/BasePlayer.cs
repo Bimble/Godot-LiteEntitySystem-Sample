@@ -11,5 +11,10 @@ namespace Sample.Shared
         public BasePlayer(EntityParams entityParams) : base(entityParams)
         {
         }
+
+        public Vector2 DeterminPosition(in PlayerInputPacket input)
+        {
+            return 200 * new Vector2(input.X, input.Y) * EntityManager.DeltaTimeF;
+        }
     }
 }

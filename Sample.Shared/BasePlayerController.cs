@@ -15,7 +15,7 @@ namespace Sample.Shared
 
         protected override void ReadInput(in PlayerInputPacket input)
         {
-            ControlledEntity.Position += 200 * new System.Numerics.Vector2(input.X, input.Y) * EntityManager.DeltaTimeF;
+            ControlledEntity.Position += ControlledEntity.DeterminPosition(input);
         }
     }
 }

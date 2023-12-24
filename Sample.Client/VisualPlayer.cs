@@ -28,8 +28,7 @@ namespace Sample.Shared
 
         protected override void Update()
         {
-            Position += 200 * new System.Numerics.Vector2(_input.X, _input.Y) * EntityManager.DeltaTimeF;
-            _player.Position = new Vector2(Position.Value.X, Position.Value.Y);
+            Position += DeterminPosition(_input);
         }
     }
 }
