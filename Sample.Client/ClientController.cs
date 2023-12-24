@@ -13,8 +13,11 @@ namespace Sample.Shared
 			var vector = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 			input.X = vector.X;
 			input.Y = vector.Y;
-
-			ControlledEntity.SetInput(input);
 		}
-	}
+
+        protected override void ReadInput(in PlayerInputPacket input)
+        {
+            ControlledEntity.SetInput(input);
+        }
+    }
 }
